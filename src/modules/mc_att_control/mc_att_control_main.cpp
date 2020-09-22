@@ -44,7 +44,6 @@
  */
 
 #include "mc_att_control.hpp"
-
 #include <drivers/drv_hrt.h>
 #include <mathlib/math/Limits.hpp>
 #include <mathlib/math/Functions.hpp>

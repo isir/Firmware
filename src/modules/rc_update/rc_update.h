@@ -195,6 +195,7 @@ private:
 		(ParamInt<px4::params::RC_MAP_GEAR_SW>) _param_rc_map_gear_sw,
 		(ParamInt<px4::params::RC_MAP_STAB_SW>) _param_rc_map_stab_sw,
 		(ParamInt<px4::params::RC_MAP_MAN_SW>) _param_rc_map_man_sw,
+        (ParamInt<px4::params::RC_MAP_TILT_SW>) _param_rc_map_tilt_sw,
 
 		(ParamInt<px4::params::RC_MAP_AUX1>) _param_rc_map_aux1,
 		(ParamInt<px4::params::RC_MAP_AUX2>) _param_rc_map_aux2,
@@ -219,6 +220,7 @@ private:
 		(ParamFloat<px4::params::RC_STAB_TH>) _param_rc_stab_th,
 		(ParamFloat<px4::params::RC_MAN_TH>) _param_rc_man_th,
 		(ParamFloat<px4::params::RC_RETURN_TH>) _param_rc_return_th,
+        (ParamFloat<px4::params::RC_TILT_TH>) _param_rc_tilt_th,
 
 		(ParamInt<px4::params::RC_CHAN_CNT>) _param_rc_chan_cnt
 	)

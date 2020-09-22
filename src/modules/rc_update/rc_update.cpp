@@ -160,6 +160,7 @@ RCUpdate::update_rc_functions()
 	_rc.function[rc_channels_s::RC_CHANNELS_FUNCTION_STAB] = _param_rc_map_stab_sw.get() - 1;
 	_rc.function[rc_channels_s::RC_CHANNELS_FUNCTION_MAN] = _param_rc_map_man_sw.get() - 1;
 
+    _rc.function[rc_channels_s::RC_CHANNELS_FUNCTION_TILT] = _param_rc_map_tilt_sw.get() - 1;
 	_rc.function[rc_channels_s::RC_CHANNELS_FUNCTION_FLAPS] = _param_rc_map_flaps.get() - 1;
 
 	_rc.function[rc_channels_s::RC_CHANNELS_FUNCTION_AUX_1] = _param_rc_map_aux1.get() - 1;
@@ -521,6 +522,8 @@ RCUpdate::Run()
 							      _param_rc_stab_th.get(), _param_rc_stab_th.get() < 0.f);
 			manual_control_setpoint.man_switch = get_rc_sw2pos_position(rc_channels_s::RC_CHANNELS_FUNCTION_MAN,
 							     _param_rc_man_th.get(), _param_rc_man_th.get() < 0.f);
+            manual_control_setpoint.tilt_switch = get_rc_sw2pos_position(rc_channels_s::RC_CHANNELS_FUNCTION_TILT,
+                    _param_rc_tilt_th.get(), _param_rc_tilt_th.get() < 0.f);
 
 			/* publish manual_control_setpoint topic */
 			_manual_control_setpoint_pub.publish(manual_control_setpoint);

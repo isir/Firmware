@@ -663,6 +663,20 @@ PARAM_DEFINE_FLOAT(FW_ACRO_Z_MAX, 45);
 PARAM_DEFINE_FLOAT(FW_RATT_TH, 0.8f);
 
 /**
+ * Threshold for Tilt mode
+ *
+ * Manual input needed in order to override attitude control rate setpoints
+ * and instead pass manual stick inputs as rate setpoints
+ *
+ * @min 0.0
+ * @max 1.0
+ * @decimal 2
+ * @increment 0.01
+ * @group FW Attitude Control
+ */
+PARAM_DEFINE_FLOAT(FW_TILT_TH, 0.9f);
+
+/**
 * Roll trim increment at minimum airspeed
 *
 * This increment is added to TRIM_ROLL when airspeed is FW_AIRSPD_MIN.

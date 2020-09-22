@@ -186,6 +186,10 @@ bool CRSFTelemetry::send_flight_mode()
 	case vehicle_status_s::NAVIGATION_STATE_RATTITUDE:
 		flight_mode = "Rattitude";
 		break;
+
+	case vehicle_status_s::NAVIGATION_STATE_TILT:
+		flight_mode = "Tilt";
+		break;
 	}
 
 	return crsf_send_telemetry_flight_mode(_uart_fd, flight_mode);
