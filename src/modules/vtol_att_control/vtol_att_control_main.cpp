@@ -487,7 +487,7 @@ VtolAttitudeControl::Run()
 
 		if (_v_control_mode.flag_control_tilt_enabled)
 		{
-			_actuators_out_1.control[4] =1.0f;//math::constrain(_manual_control_setpoint.x,0.0f,100.0f);
+			_actuators_out_1.control[4] =math::constrain(_manual_control_setpoint.x,0.0f,100.0f);
 		}
 		else
 		{

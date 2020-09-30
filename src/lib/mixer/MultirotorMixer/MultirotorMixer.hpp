@@ -231,7 +231,7 @@ private:
 
     float _param_rollrate_k=0.01f;
     float _param_pitchrate_k=0.01f;
-    float _param_yawrate_k=0.05f;
+    float _param_yawrate_k=0.003f;
 
 
     float _param_mc_max_angular_acceleration_roll=1.0f/_param_rollrate_k;
