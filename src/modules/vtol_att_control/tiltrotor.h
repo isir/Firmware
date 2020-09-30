@@ -43,8 +43,10 @@
 #include "vtol_type.h"
 #include <parameters/param.h>
 #include <drivers/drv_hrt.h>
-#include <uORB/uORB.h>
-#include <uORB/topics/manual_control_setpoint.h>
+// #include <uORB/uORB.h>
+// #include <uORB/Subscription.hpp>
+
+// #include <uORB/topics/manual_control_setpoint.h>
 class Tiltrotor : public VtolType
 {
 
@@ -104,9 +106,9 @@ private:
 	void parameters_update() override;
 	hrt_abstime _last_timestamp_disarmed{0}; /**< used for calculating time since arming */
 	bool _tilt_motors_for_startup{false};
-	//AIGHTECH
-	int manual_sp_sub_fd = orb_subscribe(ORB_ID(manual_control_setpoint));
-	struct manual_control_setpoint_s manual_control_sp {};
+	// uORB::Subscription _manual_control_setpoint_sub{ORB_ID(manual_control_setpoint)};	//manual control setpoint subscription
+	// manual_control_setpoint_s		_manual_control_setpoint{}; //manual control setpoint
+
 
 };
 #endif

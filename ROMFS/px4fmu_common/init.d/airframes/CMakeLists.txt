@@ -33,7 +33,7 @@
 
 px4_add_romfs_files(
 	# [0-999] Reserved (historical)"
-
+	6969_indus
 	# [1000, 1999] Simulation setups"
 	1000_rc_fw_easystar.hil
 	1001_rc_quad_x.hil

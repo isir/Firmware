@@ -433,10 +433,10 @@ void Tiltrotor::fill_actuator_outputs()
 	_actuators_out_1->timestamp_sample = _actuators_fw_in->timestamp_sample;
 
 	//AIGHTECH
+	// _manual_control_setpoint_sub.update(&_manual_control_setpoint);
+	// _actuators_out_1->control[4] =0.4f;//math::constrain(_manual_control_setpoint.x,0.0f,1.0f);
 
-	orb_copy(ORB_ID(manual_control_setpoint), manual_sp_sub_fd, &manual_control_sp);
-	_tilt_control=manual_control_sp.x;
-    _actuators_out_0->control[4] = _tilt_control;
+
     //PX4_INFO("%d %d %d", actuator_controls_s::INDEX_ROLL, actuator_controls_s::INDEX_PITCH, actuator_controls_s::INDEX_YAW);
 	if (_params->elevons_mc_lock && _vtol_schedule.flight_mode == vtol_mode::MC_MODE) {
 		_actuators_out_1->control[actuator_controls_s::INDEX_ROLL] = 0.0f;

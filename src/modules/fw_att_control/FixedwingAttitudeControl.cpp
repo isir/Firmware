@@ -632,7 +632,7 @@ void FixedwingAttitudeControl::Run()
 		_actuators.control[actuator_controls_s::INDEX_YAW] += _param_fw_rll_to_yaw_ff.get()
 				* constrain(_actuators.control[actuator_controls_s::INDEX_ROLL], -1.0f, 1.0f);
 
-		_actuators.control[actuator_controls_s::INDEX_FLAPS] = _flaps_applied;
+		// _actuators.control[actuator_controls_s::INDEX_FLAPS] = _flaps_applied;
 		_actuators.control[5] = _manual_control_setpoint.aux1;
 		_actuators.control[actuator_controls_s::INDEX_AIRBRAKES] = _flaperons_applied;
 		// FIXME: this should use _vcontrol_mode.landing_gear_pos in the future

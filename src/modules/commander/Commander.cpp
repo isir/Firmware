@@ -3200,12 +3200,14 @@ Commander::update_control_mode()
 		control_mode.flag_control_manual_enabled = true;
 		control_mode.flag_control_rates_enabled = stabilization_required();
 		control_mode.flag_control_attitude_enabled = stabilization_required();
+		control_mode.flag_control_tilt_enabled=false;
 		break;
 
 	case vehicle_status_s::NAVIGATION_STATE_STAB:
 		control_mode.flag_control_manual_enabled = true;
 		control_mode.flag_control_rates_enabled = true;
 		control_mode.flag_control_attitude_enabled = true;
+		control_mode.flag_control_tilt_enabled=true;
 		break;
 
 	case vehicle_status_s::NAVIGATION_STATE_RATTITUDE:

@@ -484,8 +484,18 @@ VtolAttitudeControl::Run()
 
 		_vtol_type->fill_actuator_outputs();
 		_actuators_0_pub.publish(_actuators_out_0);
+
+		if (_v_control_mode.flag_control_tilt_enabled)
+		{
+			_actuators_out_1.control[4] =1.0f;//math::constrain(_manual_control_setpoint.x,0.0f,100.0f);
+		}
+		else
+		{
+			_actuators_out_1.control[4] =0.0f;
+		}
 		_actuators_1_pub.publish(_actuators_out_1);
 
+		//AIGHTECH
 		// Advertise/Publish vtol vehicle status
 		_vtol_vehicle_status.timestamp = hrt_absolute_time();
 		_vtol_vehicle_status_pub.publish(_vtol_vehicle_status);

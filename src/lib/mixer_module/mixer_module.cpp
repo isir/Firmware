@@ -523,26 +523,26 @@ int MixingOutput::controlCallback(uintptr_t handle, uint8_t control_group, uint8
 	input = math::constrain(input, -1.f, 1.f);
 
 	/* motor spinup phase - lock throttle to zero */
-	if (output->_output_limit.state == OUTPUT_LIMIT_STATE_RAMP) {
-		if ((control_group == actuator_controls_s::GROUP_INDEX_ATTITUDE ||
-		     control_group == actuator_controls_s::GROUP_INDEX_ATTITUDE_ALTERNATE) &&
-		    control_index == actuator_controls_s::INDEX_THROTTLE) {
-			/* limit the throttle output to zero during motor spinup,
-			 * as the motors cannot follow any demand yet
-			 */
-			input = 0.0f;
-		}
-	}
+	// if (output->_output_limit.state == OUTPUT_LIMIT_STATE_RAMP) {
+	// 	if ((control_group == actuator_controls_s::GROUP_INDEX_ATTITUDE ||
+	// 	     control_group == actuator_controls_s::GROUP_INDEX_ATTITUDE_ALTERNATE) &&
+	// 	    control_index == actuator_controls_s::INDEX_THROTTLE) {
+	// 		/* limit the throttle output to zero during motor spinup,
+	// 		 * as the motors cannot follow any demand yet
+	// 		 */
+	// 		input = 0.0f;
+	// 	}
+	// }
 
-	/* throttle not arming - mark throttle input as invalid */
-	if (output->armNoThrottle() && !output->_armed.in_esc_calibration_mode) {
-		if ((control_group == actuator_controls_s::GROUP_INDEX_ATTITUDE ||
-		     control_group == actuator_controls_s::GROUP_INDEX_ATTITUDE_ALTERNATE) &&
-		    control_index == actuator_controls_s::INDEX_THROTTLE) {
-			/* set the throttle to an invalid value */
-			input = NAN;
-		}
-	}
+	// /* throttle not arming - mark throttle input as invalid */
+	// if (output->armNoThrottle() && !output->_armed.in_esc_calibration_mode) {
+	// 	if ((control_group == actuator_controls_s::GROUP_INDEX_ATTITUDE ||
+	// 	     control_group == actuator_controls_s::GROUP_INDEX_ATTITUDE_ALTERNATE) &&
+	// 	    control_index == actuator_controls_s::INDEX_THROTTLE) {
+	// 		/* set the throttle to an invalid value */
+	// 		input = NAN;
+	// 	}
+	// }
 
 	return 0;
 }

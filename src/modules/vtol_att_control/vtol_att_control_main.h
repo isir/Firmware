@@ -232,4 +232,8 @@ private:
 	int 		parameters_update();			//Update local parameter cache
 
 	void		handle_command();
+		//AIGHTECH
+	// int manual_sp_sub_fd = orb_subscribe(ORB_ID(manual_control_setpoint));
+	// struct manual_control_setpoint_s manual_control_sp {};
+
 };
